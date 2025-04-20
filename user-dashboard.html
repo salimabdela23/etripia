@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - ETripia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">...</nav>
+
+    <!-- User Dashboard -->
+    <section class="user-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>My Dashboard</h1>
+                <div class="user-welcome">
+                    <img src="images/user-default.jpg" alt="User" id="user-dashboard-avatar">
+                    <div>
+                        <h2 id="user-dashboard-name">Welcome, Sarah J.</h2>
+                        <p>Member since: <span id="member-since">October 2023</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-sidebar">
+                    <ul class="dashboard-menu">
+                        <li class="active"><a href="#overview"><i class="fas fa-tachometer-alt"></i> Overview</a></li>
+                        <li><a href="#bookings"><i class="fas fa-calendar-check"></i> My Bookings</a></li>
+                        <li><a href="#wishlist"><i class="far fa-heart"></i> Wishlist</a></li>
+                        <li><a href="#reviews"><i class="fas fa-star"></i> My Reviews</a></li>
+                        <li><a href="#settings"><i class="fas fa-cog"></i> Account Settings</a></li>
+                    </ul>
+                    
+                    <div class="dashboard-help">
+                        <h3>Need Help?</h3>
+                        <p>Contact our customer support team</p>
+                        <a href="#" class="btn-outline"><i class="fas fa-headset"></i> Contact Support</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <!-- Overview Tab -->
+                    <div class="dashboard-tab active" id="overview-tab">
+                        <div class="welcome-message">
+                            <h2>Welcome Back, <span id="user-first-name">Sarah</span>!</h2>
+                            <p>Ready for your next Ethiopian adventure? Here's what's happening with your account.</p>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Upcoming Trips</h3>
+                                    <p class="stat-number">2</p>
+                                    <a href="#bookings" class="stat-link">View Bookings</a>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Wishlist</h3>
+                                    <p class="stat-number">5</p>
+                                    <a href="#wishlist" class="stat-link">View Wishlist</a>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Reviews</h3>
+                                    <p class="stat-number">3</p>
+                                    <a href="#reviews" class="stat-link">View Reviews</a>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-passport"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>Travel Credits</h3>
+                                    <p class="stat-number">$120</p>
+                                    <a href="#settings" class="stat-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="upcoming-trips">
+                            <h3>Upcoming Trips</h3>
+                            <div class="trip-cards">
+                                <div class="trip-card">
+                                    <div class="trip-image">
+                                        <img src="images/simien-main.jpg" alt="Simien Mountains Trek">
+                                    </div>
+                                    <div class="trip-info">
+                                        <h4>Simien Mountains Trek</h4>
+                                        <div class="trip-meta">
+                                            <span><i class="fas fa-calendar-alt"></i> Nov 12-17, 2023</span>
+                                            <span><i class="fas fa-users"></i> 2 Travelers</span>
+                                        </div>
+                                        <div class="trip-status">
+                                            <span class="status confirmed">Confirmed</span>
+                                            <span class="price">$900</span>
+                                        </div>
+                                    </div>
+                                    <div class="trip-actions">
+                                        <button class="btn-outline"><i class="fas fa-file-alt"></i> View Details</button>
+                                        <button class="btn-outline"><i class="fas fa-envelope"></i> Contact Guide</button>
+                                    </div>
+                                </div>
+                                <!-- More trip cards would go here -->
+                            </div>
+                        </div>
+                        
+                        <div class="recommendations">
+                            <h3>Recommended Tours</h3>
+                            <div class="tours-grid">
+                                <!-- Recommended tours would be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bookings Tab -->
+                    <div class="dashboard-tab" id="bookings-tab">
+                        <div class="tab-header">
+                            <h2>My Bookings</h2>
+                            <div class="booking-filters">
+                                <select id="booking-status-filter">
+                                    <option value="all">All Bookings</option>
+                                    <option value="upcoming">Upcoming</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="bookings-list">
+                            <div class="booking-item">
+                                <div class="booking-image">
+                                    <img src="images/simien-main.jpg" alt="Simien Mountains Trek">
+                                </div>
+                                <div class="booking-info">
+                                    <h3>Simien Mountains Trek</h3>
+                                    <div class="booking-meta">
+                                        <span><i class="fas fa-calendar-alt"></i> Nov 12-17, 2023</span>
+                                        <span><i class="fas fa-users"></i> 2 Travelers</span>
+                                        <span><i class="fas fa-wallet"></i> $900</span>
+                                    </div>
+                                    <div class="booking-status">
+                                        <span class="status confirmed">Confirmed</span>
+                                        <div class="booking-id">Booking ID: ET-5874</div>
+                                    </div>
+                                </div>
+                                <div class="booking-actions">
+                                    <button class="btn-outline"><i class="fas fa-file-alt"></i> Details</button>
+                                    <button class="btn-outline"><i class="fas fa-envelope"></i> Message</button>
+                                    <button class="btn-outline"><i class="fas fa-print"></i> Invoice</button>
+                                </div>
+                            </div>
+                            <!-- More booking items would go here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Wishlist Tab -->
+                    <div class="dashboard-tab" id="wishlist-tab">
+                        <div class="tab-header">
+                            <h2>My Wishlist</h2>
+                            <p>Save tours you're interested in for later</p>
+                        </div>
+                        
+                        <div class="wishlist-grid">
+                            <div class="wishlist-item">
+                                <div class="wishlist-image">
+                                    <img src="images/lalibela.jpg" alt="Lalibela">
+                                    <button class="wishlist-remove"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="wishlist-info">
+                                    <h3>Lalibela & Northern Churches</h3>
+                                    <div class="wishlist-meta">
+                                        <span><i class="fas fa-map-marker-alt"></i> Lalibela, Ethiopia</span>
+                                        <span><i class="fas fa-clock"></i> 4 Days</span>
+                                        <span><i class="fas fa-star"></i> 4.8 (32 reviews)</span>
+                                    </div>
+                                    <div class="wishlist-price">
+                                        <span class="price">From $380</span>
+                                        <button class="btn-primary">Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More wishlist items would go here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Other tabs would follow similar structure -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Details Modal -->
+    <div class="modal" id="booking-details-modal">
+        <div class="modal-content large-modal">
+            <span class="close">&times;</span>
+            <h2>Booking Details</h2>
+            <div class="booking-details">
+                <div class="booking-header">
+                    <div class="booking-image">
+                        <img src="images/simien-main.jpg" alt="Simien Mountains Trek">
+                    </div>
+                    <div class="booking-title">
+                        <h3>Simien Mountains Trek</h3>
+                        <div class="booking-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 12-17, 2023</span>
+                            <span><i class="fas fa-users"></i> 2 Travelers</span>
+                            <span class="status confirmed">Confirmed</span>
+                        </div>
+                    </div>
+                    <div class="booking-price">
+                        <span>Total Paid:</span>
+                        <span class="price">$900</span>
+                    </div>
+                </div>
+                
+                <div class="booking-content">
+                    <div class="booking-section">
+                        <h4>Booking Information</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Booking Reference:</span>
+                                <span class="info-value">ET-5874</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Booking Date:</span>
+                                <span class="info-value">October 15, 2023</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Tour Operator:</span>
+                                <span class="info-value">Ethio Trek Adventures</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Payment Method:</span>
+                                <span class="info-value">Credit Card (VISA ****4242)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-section">
+                        <h4>Traveler Information</h4>
+                        <div class="travelers-list">
+                            <div class="traveler-item">
+                                <div class="traveler-info">
+                                    <span class="traveler-name">Sarah Johnson</span>
+                                    <span class="traveler-type">Primary Traveler</span>
+                                </div>
+                                <div class="traveler-details">
+                                    <span><i class="fas fa-envelope"></i> sarah@example.com</span>
+                                    <span><i class="fas fa-phone"></i> +1 234 567 8901</span>
+                                </div>
+                            </div>
+                            <!-- More travelers would be listed here -->
+                        </div>
+                    </div>
+                    
+                    <div class="booking-section">
+                        <h4>Tour Itinerary</h4>
+                        <div class="itinerary-accordion">
+                            <div class="itinerary-day">
+                                <div class="day-header">
+                                    <span>Day 1: Arrival in Gondar - Drive to Simien Mountains</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="day-content">
+                                    <p>Morning flight to Gondar. Meet your guide and drive to the Simien Mountains National Park (approx. 3 hours). Afternoon hike to enjoy the spectacular scenery and spot Gelada baboons. Overnight at Simien Lodge.</p>
+                                    <div class="day-meta">
+                                        <span><i class="fas fa-hotel"></i> Simien Lodge</span>
+                                        <span><i class="fas fa-utensils"></i> Lunch, Dinner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More itinerary days would go here -->
+                        </div>
+                    </div>
+                    
+                    <div class="booking-section">
+                        <h4>Important Notes</h4>
+                        <div class="notes-content">
+                            <p>Your tour operator will contact you 2 weeks before departure with final details and packing list.</p>
+                            <p>Please ensure you have valid travel insurance that covers trekking at high altitude.</p>
+                            <p>Visa requirements: You must obtain an Ethiopian visa before arrival.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button class="btn-outline"><i class="fas fa-print"></i> Print Itinerary</button>
+                        <button class="btn-outline"><i class="fas fa-envelope"></i> Email Details</button>
+                        <button class="btn-primary"><i class="fas fa-headset"></i> Contact Support</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

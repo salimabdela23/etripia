@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details - ETripia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">...</nav>
+
+    <!-- Tour Header -->
+    <section class="tour-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; <a href="tours.html">Tours</a> &gt; <span id="tour-breadcrumb">Tour Details</span>
+            </div>
+            <h1 id="tour-title">Simien Mountains Trekking Adventure</h1>
+            <div class="tour-meta">
+                <span class="location"><i class="fas fa-map-marker-alt"></i> <span id="tour-location">Simien Mountains National Park</span></span>
+                <span class="duration"><i class="fas fa-clock"></i> <span id="tour-duration">5 Days</span></span>
+                <span class="rating"><i class="fas fa-star"></i> <span id="tour-rating">4.9</span> (24 reviews)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Gallery -->
+    <section class="tour-gallery">
+        <div class="container">
+            <div class="main-image">
+                <img id="main-tour-image" src="images/simien-main.jpg" alt="Simien Mountains">
+            </div>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail active"><img src="images/simien1.jpg" alt="Simien Mountains"></div>
+                <div class="thumbnail"><img src="images/simien2.jpg" alt="Simien Mountains"></div>
+                <div class="thumbnail"><img src="images/simien3.jpg" alt="Simien Mountains"></div>
+                <div class="thumbnail"><img src="images/simien4.jpg" alt="Simien Mountains"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Main Content -->
+    <section class="tour-content">
+        <div class="container">
+            <div class="tour-main">
+                <div class="tour-description">
+                    <h2>Tour Description</h2>
+                    <div id="tour-description-text">
+                        <p>This 5-day trek through the Simien Mountains National Park, a UNESCO World Heritage Site, offers breathtaking views of jagged mountain peaks, deep valleys, and sheer cliffs that drop some 1,500 meters. You'll encounter unique wildlife including the Gelada baboon, the Walia ibex, and the Ethiopian wolf.</p>
+                        <p>The trek is moderately challenging, with daily hikes of 4-6 hours at altitudes between 3,000 and 4,000 meters. Our expert local guides will ensure your safety while sharing their deep knowledge of the region's ecology and culture.</p>
+                        <h3>Highlights</h3>
+                        <ul>
+                            <li>Trek to Ras Dashen, Ethiopia's highest peak at 4,550m</li>
+                            <li>Visit traditional Ethiopian villages</li>
+                            <li>Spot endemic wildlife including Gelada baboons</li>
+                            <li>Camp under the stars in pristine mountain environments</li>
+                            <li>Experience Ethiopian hospitality and cuisine</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tour-itinerary">
+                    <h2>Itinerary</h2>
+                    <div class="itinerary-accordion" id="tour-itinerary">
+                        <!-- Itinerary will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <div class="tour-includes">
+                    <h2>What's Included</h2>
+                    <div class="includes-excludes">
+                        <div class="includes">
+                            <h3><i class="fas fa-check"></i> Included</h3>
+                            <ul id="included-items">
+                                <!-- Will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        <div class="excludes">
+                            <h3><i class="fas fa-times"></i> Not Included</h3>
+                            <ul id="excluded-items">
+                                <!-- Will be loaded dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tour-reviews">
+                    <h2>Customer Reviews</h2>
+                    <div class="reviews-container" id="tour-reviews">
+                        <!-- Reviews will be loaded dynamically -->
+                    </div>
+                    <button class="btn-outline" id="add-review-btn">Add Your Review</button>
+                </div>
+            </div>
+            
+            <div class="tour-sidebar">
+                <div class="booking-box">
+                    <div class="price-box">
+                        <span class="price" id="tour-price">$450</span>
+                        <span class="per-person">per person</span>
+                    </div>
+                    <div class="availability">
+                        <label for="tour-date">Select Date:</label>
+                        <input type="date" id="tour-date" min="2023-11-01">
+                        <div class="available-dates">
+                            <p>Available: Nov 5, 12, 19, 26</p>
+                        </div>
+                    </div>
+                    <div class="group-size">
+                        <label for="group-size">Number of Travelers:</label>
+                        <select id="group-size">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6+ (Group discount)</option>
+                        </select>
+                    </div>
+                    <div class="total-price">
+                        <span>Total:</span>
+                        <span id="total-price">$450</span>
+                    </div>
+                    <button class="btn-primary" id="book-now-btn">Book Now</button>
+                    <button class="btn-outline" id="wishlist-btn"><i class="far fa-heart"></i> Add to Wishlist</button>
+                    <div class="quick-info">
+                        <p><i class="fas fa-users"></i> <strong>Group Size:</strong> 2-12 people</p>
+                        <p><i class="fas fa-language"></i> <strong>Languages:</strong> English, Amharic</p>
+                        <p><i class="fas fa-user-tie"></i> <strong>Guide:</strong> Professional local guide</p>
+                    </div>
+                </div>
+                
+                <div class="agency-card">
+                    <h3>Offered By</h3>
+                    <div class="agency-info">
+                        <img id="agency-logo" src="images/agency1.jpg" alt="Ethio Trek Adventures">
+                        <h4 id="agency-name">Ethio Trek Adventures</h4>
+                        <div class="agency-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7 (86 reviews)</span>
+                        </div>
+                        <p id="agency-description">Specializing in adventure tours throughout Ethiopia since 2010. Our guides are certified professionals with extensive knowledge of Ethiopia's natural wonders.</p>
+                        <a href="#" class="btn-outline agency-link">View All Tours</a>
+                    </div>
+                </div>
+                
+                <div class="why-book">
+                    <h3>Why Book With Us?</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Best price guarantee</li>
+                        <li><i class="fas fa-check"></i> Instant confirmation</li>
+                        <li><i class="fas fa-check"></i> Secure payment</li>
+                        <li><i class="fas fa-check"></i> 24/7 customer support</li>
+                        <li><i class="fas fa-check"></i> Flexible cancellation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Tours -->
+    <section class="similar-tours">
+        <div class="container">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="tours-grid" id="similar-tours">
+                <!-- Similar tours will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content booking-modal">
+            <span class="close">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <div class="booking-steps">
+                <div class="step active" data-step="1">1. Your Info</div>
+                <div class="step" data-step="2">2. Payment</div>
+                <div class="step" data-step="3">3. Confirmation</div>
+            </div>
+            
+            <form id="booking-form">
+                <div class="booking-step" id="step-1">
+                    <h3>Your Information</h3>
+                    <div class="form-group">
+                        <label for="booking-name">Full Name</label>
+                        <input type="text" id="booking-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-email">Email</label>
+                        <input type="email" id="booking-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-phone">Phone Number</label>
+                        <input type="tel" id="booking-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-notes">Special Requirements</label>
+                        <textarea id="booking-notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="booking-terms" required>
+                        <label for="booking-terms">I agree to the <a href="#">booking terms and conditions</a></label>
+                    </div>
+                    <button type="button" class="btn-primary next-step" data-next="2">Continue to Payment</button>
+                </div>
+                
+                <div class="booking-step hidden" id="step-2">
+                    <h3>Payment Information</h3>
+                    <div class="booking-summary">
+                        <h4>Booking Summary</h4>
+                        <div class="summary-item">
+                            <span>Tour:</span>
+                            <span id="summary-tour">Simien Mountains Trek</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Date:</span>
+                            <span id="summary-date">Nov 12, 2023</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Travelers:</span>
+                            <span id="summary-travelers">2</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total:</span>
+                            <span id="summary-total">$900</span>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-tabs">
+                            <button type="button" class="active" data-method="card">Credit Card</button>
+                            <button type="button" data-method="paypal">PayPal</button>
+                            <button type="button" data-method="bank">Bank Transfer</button>
+                        </div>
+                        
+                        <div class="payment-content active" id="card-payment">
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Expiry Date</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvc">CVC</label>
+                                    <input type="text" id="card-cvc" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name">
+                            </div>
+                        </div>
+                        
+                        <div class="payment-content hidden" id="paypal-payment">
+                            <p>You will be redirected to PayPal to complete your payment</p>
+                            <img src="images/paypal-logo.png" alt="PayPal">
+                        </div>
+                        
+                        <div class="payment-content hidden" id="bank-payment">
+                            <p>Make a transfer to our bank account:</p>
+                            <div class="bank-details">
+                                <p><strong>Bank Name:</strong> Commercial Bank of Ethiopia</p>
+                                <p><strong>Account Name:</strong> Explore Ethiopia Tours</p>
+                                <p><strong>Account Number:</strong> 1000254879653</p>
+                                <p><strong>SWIFT Code:</strong> CBETETAA</p>
+                            </div>
+                            <p>Please include your booking reference in the transfer details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-buttons">
+                        <button type="button" class="btn-outline prev-step" data-prev="1">Back</button>
+                        <button type="button" class="btn-primary next-step" data-next="3">Complete Booking</button>
+                    </div>
+                </div>
+                
+                <div class="booking-step hidden" id="step-3">
+                    <div class="booking-confirmation">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Booking Confirmed!</h3>
+                        <p>Your tour booking has been successfully confirmed.</p>
+                        <div class="confirmation-details">
+                            <p><strong>Booking Reference:</strong> <span id="confirmation-ref">ET-2023-5874</span></p>
+                            <p><strong>Tour:</strong> <span id="confirmation-tour">Simien Mountains Trek</span></p>
+                            <p><strong>Date:</strong> <span id="confirmation-date">November 12, 2023</span></p>
+                            <p><strong>Travelers:</strong> <span id="confirmation-travelers">2</span></p>
+                            <p><strong>Total Paid:</strong> <span id="confirmation-total">$900</span></p>
+                        </div>
+                        <p>We've sent a confirmation email with all the details to <span id="confirmation-email">user@example.com</span></p>
+                        <button type="button" class="btn-primary" id="view-booking-btn">View Booking in Dashboard</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="review-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Your Review</h2>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="review-rating">Rating</label>
+                    <div class="star-rating">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                        <input type="hidden" id="review-rating" value="0">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-title">Title</label>
+                    <input type="text" id="review-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer>...</footer>
+
+    <!-- Scripts -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/tours.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
