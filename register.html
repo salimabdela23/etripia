@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Explore Ethiopia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join our tourism community</p>
+            </div>
+
+            <div class="auth-mode-toggle">
+                <button class="mode-btn active" data-mode="user">User Registration</button>
+                <button class="mode-btn" data-mode="agency">Agency Registration</button>
+            </div>
+
+            <form id="registerForm" class="auth-form">
+                <!-- Common Fields -->
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword">Password (min 8 characters)</label>
+                    <input type="password" id="regPassword" minlength="8" required>
+                </div>
+
+                <!-- User-specific Fields -->
+                <div id="userFields">
+                    <div class="form-group">
+                        <label for="userPhone">Phone Number</label>
+                        <input type="tel" id="userPhone">
+                    </div>
+                </div>
+
+                <!-- Agency-specific Fields -->
+                <div id="agencyFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="agencyName">Agency Name</label>
+                        <input type="text" id="agencyName">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="agencyLicense">License Number</label>
+                        <input type="text" id="agencyLicense">
+                    </div>
+                </div>
+
+                <div class="form-group terms">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+
+        <div class="auth-background" style="background-image: url('../images/register-bg.jpg');"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
